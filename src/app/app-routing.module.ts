@@ -1,35 +1,27 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
+// Modulos que agrupan otros componenetes
+import { PagesRoutingModule } from './pages/pages.routing';
+
+// Componentes de conexion
 import { LoginComponent } from './auth/login/login.component';
 import { RegistreComponent } from './auth/registre/registre.component';
-import { ProgressComponent } from './pages/progress/progress.component';
-import { Graphica1Component } from './pages/graphica1/graphica1.component';
-import { PagesComponent } from './pages/pages.component';
+
+// Componente de la pagina de error 404
 import { NopagesfoundComponent } from './nopagesfound/nopagesfound.component';
 
-const routes: Routes = [
-  {
-    path: '',
-    component: PagesComponent,
-    children: [
-      { path: 'dashboard', component: DashboardComponent },
-      { path: 'progress', component: ProgressComponent },
-      { path: 'graphica1', component: Graphica1Component },
-      { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-    ]
-  },
 
+const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegistreComponent },
   { path: '**', component: NopagesfoundComponent }
 ];
 
-
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    PagesRoutingModule
   ],
   exports: [
     RouterModule
