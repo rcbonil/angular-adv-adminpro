@@ -6,8 +6,8 @@ import { LoginComponent } from './auth/login/login.component';
 import { RegistreComponent } from './auth/registre/registre.component';
 import { ProgressComponent } from './pages/progress/progress.component';
 import { Graphica1Component } from './pages/graphica1/graphica1.component';
-import { NopagesfoundComponent } from './pages/nopagesfound/nopagesfound.component';
 import { PagesComponent } from './pages/pages.component';
+import { NopagesfoundComponent } from './nopagesfound/nopagesfound.component';
 
 const routes: Routes = [
   {
@@ -28,7 +28,6 @@ const routes: Routes = [
 
 
 @NgModule({
-  declarations: [],
   imports: [
     RouterModule.forRoot(routes)
   ],
