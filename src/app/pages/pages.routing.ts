@@ -1,3 +1,11 @@
+/* 
+
+    Esta pagina contiene las rutas hijas del folder Pages
+    y estas son importadas en el archivo de rutas principales
+    app-routing.module.ts
+
+*/
+
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 
