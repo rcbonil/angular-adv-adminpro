@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-incrementador',
@@ -6,13 +6,25 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   styles: [
   ]
 })
-export class IncrementadorComponent {
+export class IncrementadorComponent implements OnInit {
+
+  ngOnInit(): void {
+    this.btnClass = `btn ${this.btnClass}`;
+  }
 
   /*@Input('valorInicialProgreso') progreso: number = 50; 
     Si se necesita renombrar progreso se coloca el nuevo nombre
     entre comillas. Ver HTML
   */
   @Input() progreso: number = 50;
+
+  // Las clases que se pueden utilizar son :
+  // btn-warning : color amarillo
+  // btn-danger : color rojo
+  // btn-info : color azul
+  // Por defecto btn-primary es de color morado para este tema
+  @Input() btnClass: string = 'btn-primary';
+
 
   @Output() valorSalida: EventEmitter<number> = new EventEmitter();
 
