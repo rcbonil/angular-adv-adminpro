@@ -21,7 +21,8 @@
     <div class="card">
       <div class="card-body">
 
-        <app-incrementador (valorSalida)="progreso1 = $event" [progreso]="progreso1" [btnClass]="'btn-danger'">
+        <app-incrementador (valorSalida)="progreso1 = $event" [progreso]="progreso1" [btnClass]="'btn-danger'"
+          [intervalo]="10">
         </app-incrementador>
 
       </div>
@@ -31,7 +32,8 @@
     <div class="card">
       <div class="card-body">
 
-        <app-incrementador (valorSalida)="progreso2 = $event" [progreso]="progreso2" [btnClass]="'btn-info'">
+        <app-incrementador (valorSalida)="progreso2 = $event" [progreso]="progreso2" [btnClass]="'btn-info'"
+          [intervalo]="20">
         </app-incrementador>
 
       </div>

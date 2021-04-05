@@ -10,6 +10,8 @@ export class IncrementadorComponent implements OnInit {
 
   ngOnInit(): void {
     this.btnClass = `btn ${this.btnClass}`;
+
+    console.log(this.progreso);
   }
 
   /*@Input('valorInicialProgreso') progreso: number = 50; 
@@ -18,29 +20,34 @@ export class IncrementadorComponent implements OnInit {
   */
   @Input() progreso: number = 50;
 
+
   // Las clases que se pueden utilizar son :
   // btn-warning : color amarillo
   // btn-danger : color rojo
   // btn-info : color azul
   // Por defecto btn-primary es de color morado para este tema
   @Input() btnClass: string = 'btn-primary';
+  @Input() intervalo: number = 5;
 
 
   @Output() valorSalida: EventEmitter<number> = new EventEmitter();
 
-  cambiarValor(valor: number) {
+  cambiarValor(vlrIntervalo: number) {
 
-    if (this.progreso >= 100 && valor >= 0) {
+    console.log(this.progreso + ' :: ' + this.intervalo + ' :: ' + vlrIntervalo);
+
+
+    if (this.progreso >= 100 && vlrIntervalo >= 0) {
       this.valorSalida.emit(100);
       return this.progreso = 100;
     }
 
-    if (this.progreso <= 0 && valor < 0) {
+    if (this.progreso <= 0 && vlrIntervalo < 0) {
       this.valorSalida.emit(0);
       return this.progreso = 0;
     }
 
-    this.progreso = this.progreso + valor;
+    this.progreso = this.progreso + vlrIntervalo;
     this.valorSalida.emit(this.progreso);
   }
 
